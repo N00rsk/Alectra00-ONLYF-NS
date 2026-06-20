@@ -1,8 +1,3 @@
-Her er årsaken til at det ikke endret seg hos deg: Koden var riktig, men nettleseren din hadde sannsynligvis lagret det gamle bildet i minnet (cache).
-
-I koden under har jeg løst dette permanent ved å **fjerne posisjoneringen som krasjet**, og i stedet bruke en ren HTML-struktur med en negativ margin (`margin-top: -65px`). Dette tvinger bildet opp på banneren og dytter teksten naturlig ned, slik at ingenting kan overlappe uansett skjermstørrelse.
-
-```html
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -51,15 +46,16 @@ I koden under har jeg løst dette permanent ved å **fjerne posisjoneringen som 
         }
 
         .avatar-container {
-            width: 120px;
-            height: 120px;
+            width: 125px;
+            height: 125px;
             border-radius: 50%;
             background: #ffffff;
             border: 4px solid #ffffff;
-            margin-top: -65px; /* Drar bildet opp på banneren uten posisjonsfeil */
-            margin-bottom: 15px;
+            margin-top: -85px; /* Drar bildet mye høyere opp på banneren */
+            margin-bottom: 12px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            z-index: 2;
         }
 
         .avatar-container img {
@@ -162,7 +158,7 @@ I koden under har jeg løst dette permanent ved å **fjerne posisjoneringen som 
                         <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                     </svg>
                 </div>
-                <p class="sub-text">@alectra00 • 0 videoer</p>
+                <p class="sub-text">@alectra00 • 20 bilder • 5 videoer</p>
                 
                 <div class="exclusive-box">
                     <h2>Eksklusivt innhold</h2>
@@ -182,5 +178,3 @@ I koden under har jeg løst dette permanent ved å **fjerne posisjoneringen som 
 
 </body>
 </html>
-
-```
